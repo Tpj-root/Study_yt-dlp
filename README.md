@@ -54,11 +54,11 @@ Export cookies and ensure the file contains __Secure-3PAPISID and __Secure-3PSID
 
 
 ```
-yt-dlp --cookies-from-browser firefox "https://www.youtube.com/watch?v=20SuWSn2ORw"
+yt-dlp --cookies-from-browser firefox "https://www.youtube.com/watch?v=VIDEO_ID"
 
-yt-dlp --cookies-from-browser chrome "https://www.youtube.com/watch?v=20SuWSn2ORw"
+yt-dlp --cookies-from-browser chrome "https://www.youtube.com/watch?v=VIDEO_ID"
 
-yt-dlp --cookies-from-browser firefox:default "https://www.youtube.com/watch?v=20SuWSn2ORw"
+yt-dlp --cookies-from-browser firefox:default "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
 
@@ -85,7 +85,7 @@ source ~/.bashrc
 
 
 ```
-yt-dlp --cookies-from-browser firefox -O "%(title)s - %(filesize_approx)s" "https://www.youtube.com/watch?v=20SuWSn2ORw"
+yt-dlp --cookies-from-browser firefox -O "%(title)s - %(filesize_approx)s" "https://www.youtube.com/watch?v=VIDEO_ID"
 yt-dlp --cookies-from-browser firefox -O "%(title)s - %(filesize_approx)s" "<playlist_url>"
 yt-dlp --cookies-from-browser firefox --print "Title: %(title)s | Size: %(filesize_approx)s" "<URL>"
 ```
@@ -97,18 +97,18 @@ yt-dlp --cookies-from-browser firefox --print "Title: %(title)s | Size: %(filesi
 
 
 ```
-yt-dlp --cookies-from-browser firefox -f 137+140 "https://www.youtube.com/watch?v=20SuWSn2ORw"
+yt-dlp --cookies-from-browser firefox -f 137+140 "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
 
 
 ```
-/usr/local/bin/yt-dlp --cookies-from-browser firefox -F "https://www.youtube.com/watch?v=20SuWSn2ORw"
+/usr/local/bin/yt-dlp --cookies-from-browser firefox -F "https://www.youtube.com/watch?v=VIDEO_ID"
 
 
 Extracting cookies from firefox
 Extracted 1363 cookies from firefox
-[youtube] Extracting URL: https://www.youtube.com/watch?v=20SuWSn2ORw
+[youtube] Extracting URL: https://www.youtube.com/watch?v=VIDEO_ID
 [youtube] 20SuWSn2ORw: Downloading webpage
 [youtube] 20SuWSn2ORw: Downloading tv client config
 [youtube] 20SuWSn2ORw: Downloading player d50f54ef
@@ -132,7 +132,7 @@ sb0 mhtml 343x180      0    │                 mhtml │ images                
 ```
 
 ```
-yt-dlp --cookies-from-browser firefox -f 137 "https://www.youtube.com/watch?v=20SuWSn2ORw"
+yt-dlp --cookies-from-browser firefox -f 137 "https://www.youtube.com/watch?v=VIDEO_ID"
 
 ```
 
