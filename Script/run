@@ -1,0 +1,195 @@
+```
+let output = "";
+
+document.querySelectorAll('.panel-body.question-ans-box').forEach(questionDiv => {
+    let questionText = questionDiv.querySelector('.questions .language_l1')?.innerText.trim();
+    output += "Question: " + questionText + "\n";
+
+    questionDiv.querySelectorAll('.optional-questions li').forEach(option => {
+        let answerText = option.querySelector('label .language_l1')?.innerText.trim();
+        let isCorrect = option.querySelector('input')?.checked;
+        
+        output += (isCorrect ? "[✔] " : "[ ] ") + answerText + "\n";
+    });
+
+    output += "\n";
+});
+
+// Save as a text file
+let blob = new Blob([output], { type: "text/plain" });
+let link = document.createElement("a");
+link.href = URL.createObjectURL(blob);
+link.download = "questions.txt";
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
+
+console.log("File saved: questions.txt");
+
+
+```
+
+
+
+
+
+
+
+
+```
+
+let output = "";
+
+document.querySelectorAll('.question_div').forEach(questionDiv => {
+    let questionText = questionDiv.querySelector('.questions .language_l1')?.innerText.trim();
+    output += "Question: " + questionText + "\n";
+
+    questionDiv.querySelectorAll('.select-answer li').forEach(option => {
+        let answerText = option.querySelector('label .language_l1')?.innerText.trim();
+        let isCorrect = option.querySelector('input')?.checked || option.querySelector('input')?.getAttribute('data-correct') === 'true';
+        
+        output += (isCorrect ? "[✔] " : "[ ] ") + answerText + "\n";
+    });
+
+    output += "\n";
+});
+
+// Create a Blob with the text content
+let blob = new Blob([output], { type: "text/plain" });
+let link = document.createElement("a");
+link.href = URL.createObjectURL(blob);
+link.download = "text.txt";
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
+
+console.log("File saved: text.txt");
+
+```
+
+
+
+
+```
+let output = "";
+
+document.querySelectorAll('.question_div').forEach(questionDiv => {
+    let questionText = questionDiv.querySelector('.questions .language_l1')?.innerText.trim();
+    output += "Question: " + questionText + "\n";
+
+    questionDiv.querySelectorAll('.select-answer li').forEach(option => {
+        let answerText = option.querySelector('label .language_l1')?.innerText.trim();
+        let isCorrect = option.querySelector('input')?.checked || option.querySelector('input')?.getAttribute('data-correct') === 'true';
+        
+        output += (isCorrect ? "[✔] " : "[ ] ") + answerText + "\n";
+    });
+
+    output += "\n";
+});
+
+// Log to console
+console.log(output);
+
+// Copy to clipboard
+navigator.clipboard.writeText(output).then(() => {
+    console.log("Text copied to clipboard!");
+}).catch(err => {
+    console.error("Failed to copy:", err);
+});
+
+
+```
+
+
+
+```
+(function() {
+    let data = '';
+    document.querySelectorAll('.question_div').forEach(questionDiv => {
+        let question = questionDiv.querySelector('.questions .language_l1')?.innerText.trim();
+        if (!question) return;
+        
+        data += 'Question: ' + question + '\n';
+
+        questionDiv.querySelectorAll('.select-answer li').forEach(option => {
+            let answer = option.querySelector('label .language_l1')?.innerText.trim();
+            if (answer) {
+                data += '- ' + answer + '\n';
+            }
+        });
+
+        data += '\n';
+    });
+
+    let blob = new Blob([data], { type: 'text/plain' });
+    let a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'questions.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+})();
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Look for an Attribute Indicating the Correct Answer
+
+Sometimes, the correct answer has a special attribute like data-correct="true", checked, selected, or a CSS class. You can inspect the HTML to check if any radio button or label has such an indicator.
+
+
+
+```
+document.querySelectorAll('.question_div').forEach(questionDiv => {
+    console.log('Question:', questionDiv.querySelector('.questions .language_l1')?.innerText.trim());
+
+    questionDiv.querySelectorAll('.select-answer li').forEach(option => {
+        let answerText = option.querySelector('label .language_l1')?.innerText.trim();
+        let isCorrect = option.querySelector('input')?.checked || option.querySelector('input')?.getAttribute('data-correct') === 'true';
+        
+        console.log(isCorrect ? '[✔] ' + answerText : '[ ] ' + answerText);
+    });
+
+    console.log('\n');
+});
+
+```
+
+
+
+
+
+
+
+Check for a Hidden Section Showing the Correct Answer
+
+Some websites reveal the correct answer only after submission. Look for hidden <div> elements or display: none styles using:
+
+
+```
+
+document.querySelectorAll('*').forEach(el => {
+    if (window.getComputedStyle(el).display === 'none' && el.innerText.trim() !== '') {
+        console.log(el.innerText.trim());
+    }
+});
+
+
+```
