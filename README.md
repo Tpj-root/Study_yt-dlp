@@ -138,3 +138,14 @@ yt-dlp --cookies-from-browser firefox -f 137 "https://www.youtube.com/watch?v=VI
 
 
 
+
+```
+Log in to YouTube in Firefox and confirm you can view the private video.
+Open your terminal and ensure yt-dlp is installed.
+Run:
+yt-dlp --cookies-from-browser firefox -f best "https://www.youtube.com/watch?v=VIDEO_ID"
+Replace "VIDEO_ID" with the actual video's ID.
+The command uses your browser cookies for authentication to download the private video.
+```
+
+
