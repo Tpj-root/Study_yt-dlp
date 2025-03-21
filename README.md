@@ -43,6 +43,9 @@ yt-dlp --cookies cookies.txt "https://www.youtube.com/watch?v=VIDEO_ID"
 
 
 ```
+https://github.com/hrdl-github/cookies-txt
+https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/
+
 Use the correct extension to extract cookies:
 
     🔹 Get cookies.txt (for Chrome/Firefox)
@@ -149,3 +152,37 @@ The command uses your browser cookies for authentication to download the private
 ```
 
 
+
+
+
+
+---
+
+### **Bug Fix**
+
+**Error:**
+```
+ERROR: [youtube] VIDEO_ID: Video unavailable. This video is private
+```
+
+### **Method 1: Using Browser Cookies**
+**Solution:**
+1. Open **Firefox**.
+2. Check if you are **logged into your YouTube account**.
+3. If necessary, **switch to the correct account**.
+
+Then, run the following command:
+```bash
+/usr/local/bin/yt-dlp --cookies-from-browser firefox -F "https://www.youtube.com/watch?v=VIDEO_ID"
+```
+
+---
+
+### **Method 2: Using Cookies File**
+**Solution:**
+1. First, download the **cookies.txt** file using a Firefox extension.
+2. Run the following command:
+```bash
+yt-dlp --cookies cookies.txt "https://www.youtube.com/watch?v=VIDEO_ID"
+```
+---

@@ -33,6 +33,26 @@ console.log("File saved: questions.txt");
 
 
 
+```
+(() => {
+    let rows = document.querySelectorAll("tr");
+    let csvContent = "Day,Title,Link\n";
+
+    rows.forEach(row => {
+        let day = row.querySelector("th")?.innerText.trim();
+        let title = row.querySelector("td")?.innerText.trim();
+        let link = row.querySelector("td a")?.href;
+
+        if (day && title && link) {
+            csvContent += `${day},${title},${link}\n`;
+        }
+    });
+
+    console.log(csvContent);
+})();
+```
+
+
 
 
 
