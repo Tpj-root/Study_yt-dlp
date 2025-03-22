@@ -151,6 +151,12 @@ yt-dlp --cookies-from-browser firefox -f 137+140 "https://www.youtube.com/watch?
 
 
 
+
+ 
+
+**Get a list available formats of each video**
+
+
 ```
 /usr/local/bin/yt-dlp --cookies-from-browser firefox -F "https://www.youtube.com/watch?v=VIDEO_ID"
 
