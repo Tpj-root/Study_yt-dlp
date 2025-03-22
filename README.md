@@ -184,7 +184,7 @@ ERROR: [youtube] VIDEO_ID: Video unavailable. This video is private
 
 Then, run the following command:
 ```bash
-/usr/local/bin/yt-dlp --cookies-from-browser firefox -F "https://www.youtube.com/watch?v=VIDEO_ID"
+/usr/local/bin/yt-dlp --cookies-from-browser firefox "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
 ---
