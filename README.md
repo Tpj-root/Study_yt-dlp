@@ -190,6 +190,9 @@ Then, run the following command:
 ---
 
 
+### **Method 2: Using Cookies File**
+
+
 ### **Using yt-dlp to Extract Cookies without Firefox extension**
 
 ```
@@ -197,7 +200,6 @@ yt-dlp --cookies-from-browser firefox --cookies cookies.txt
 ```
 
 
-### **Method 2: Using Cookies File**
 **Solution:**
 1. First, download the **cookies.txt** file using a Firefox extension.
 2. Run the following command:
