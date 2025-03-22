@@ -12,6 +12,17 @@ sudo chmod a+rx /usr/local/bin/yt-dlp
 
 ```
 
+Dependency software
+
+```
+sudo apt install ffmpeg
+
+```
+
+
+
+
+
 
 
 yt-dlp --version
